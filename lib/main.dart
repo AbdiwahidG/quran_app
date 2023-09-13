@@ -15,7 +15,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Quran App',
       theme: ThemeData(
-          primarySwatch: Constants.kSwatchColor, fontFamily: 'Poppins'),
+        primarySwatch: Constants.kSwatchColor,
+        primaryColor: Constants.kPrimary,
+        scaffoldBackgroundColor: Colors.white,
+        fontFamily: 'Poppins',
+      ),
       home: const SplashScreen(),
     );
   }
