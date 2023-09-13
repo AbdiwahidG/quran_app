@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:quran_app/screens/splashScreen.dart';
+import 'package:quran_app/contants/constants.dart';
+import 'package:quran_app/screens/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,9 +15,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Quran App',
       theme: ThemeData(
-          //primarySwatch: Constatnts.kSwatchColor,
-          fontFamily: 'Poppins'),
-      home: SplashScreen(),
+          primarySwatch: Constants.kSwatchColor, fontFamily: 'Poppins'),
+      home: const SplashScreen(),
     );
   }
 }
