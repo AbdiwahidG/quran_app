@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:quran_app/contants/constants.dart';
-import 'package:quran_app/screens/home_screen.dart';
+import 'package:quran_app/screens/main_screen.dart';
 
 class OnBoardingScreen extends StatefulWidget {
   const OnBoardingScreen({super.key});
@@ -90,7 +90,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
           ],
           onDone: () {
             Navigator.pushReplacement(context,
-                MaterialPageRoute(builder: ((context) => const HomeScreen())));
+                MaterialPageRoute(builder: ((context) => const MainScreen())));
           },
           //onSkip: () {},
           showNextButton: true,
