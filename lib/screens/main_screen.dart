@@ -1,6 +1,7 @@
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:quran_app/contants/constants.dart';
+
 import 'package:quran_app/screens/audio_screen.dart';
 import 'package:quran_app/screens/home_screen.dart';
 import 'package:quran_app/screens/prayer_screen.dart';
@@ -15,26 +16,50 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
   int selectIndex = 0;
-  List<Widget> _widgetList = [
-    HomeScreen(),
-    QuranScreen(),
-    AudioScreen(),
-    PrayerScreen(),
+  final List<Widget> _widgetList = [
+    const HomeScreen(),
+    const QuranScreen(),
+    const AudioScreen(),
+    const PrayerScreen(),
   ];
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-          bottomNavigationBar: ConvexAppBar(
-        items: [
-          TabItem(icon: Icons.home, title: 'Home'),
-          TabItem(icon: SvgPicture.asset('assets/quran.svg'), title: 'Quran'),
-          TabItem(icon: Icons.add, title: 'Audio'),
-          TabItem(icon: Icons.message, title: 'Prayer'),
-        ],
-        initialActiveIndex: 0,
-        onTap: updateIndex,
-      )),
+        body: _widgetList[selectIndex],
+        bottomNavigationBar: ConvexAppBar(
+          items: [
+            TabItem(
+                icon: Image.asset(
+                  'assets/home.png',
+                  color: Colors.white,
+                ),
+                title: 'Home'),
+            TabItem(
+                icon: Image.asset(
+                  'assets/holyQuran.png',
+                  color: Colors.white,
+                ),
+                title: 'Quran'),
+            TabItem(
+                icon: Image.asset(
+                  'assets/audio.png',
+                  color: Colors.white,
+                ),
+                title: 'Audio'),
+            TabItem(
+                icon: Image.asset(
+                  'assets/mosque.png',
+                  color: Colors.white,
+                ),
+                title: 'Prayer'),
+          ],
+          initialActiveIndex: 0,
+          onTap: updateIndex,
+          backgroundColor: Constants.kPrimary,
+          activeColor: Constants.kPrimary,
+        ),
+      ),
     );
   }
 
