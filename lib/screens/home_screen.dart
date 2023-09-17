@@ -95,68 +95,73 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Column(
                     children: [
                       FutureBuilder<AyahOfTheDay>(
-                          future: _apiServices.getAyahOfTheDay(),
-                          builder: (context,(context, snapshot) {
-                            switch (snapshot.connectionState) {
-                              case ConnectionState.none:
+                        future: _apiServices.getAyahOfTheDay(),
+                        builder: (context, snapshot) {
+                          switch (snapshot.connectionState) {
+                            case ConnectionState.none:
                               return Icon(Icons.sync_problem);
-                              case ConnectionState.waiting:
-                              case ConnectionSate.active:
-                              return circularProgressIndicator;
-                            }
-                          })),
-                      Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(32),
-                          ),
-                          child: Column(
-                            children: [
-                              Text(
-                                'Quran Ayah of the Day',
-                                style: TextStyle(
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                              Divider(
-                                color: Colors.black,
-                                thickness: 0.5,
-                              ),
-                              Text(
-                                data!.arText!,
-                                style: TextStyle(
-                                  color: Colors.black54,
+                            case ConnectionState.waiting:
+                            case ConnectionState.active:
+                              return CircularProgressIndicator();
+                            case ConnectionState.done:
+                              return Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(32),
                                 ),
-                              ),
-                              Text(
-                                data!.enTran!,
-                                style: TextStyle(
-                                  color: Colors.black54,
-                                ),
-                              ),
-                              RichText(
-                                text: TextSpan(
-                                  children: <InlineSpan>[
-                                    WidgetSpan(
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Text(
-                                          data!.surNumber!.toString(),
-                                        ),
+                                child: Column(
+                                  children: [
+                                    Text(
+                                      'Quran Ayah of the Day',
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    Divider(
+                                      color: Colors.black,
+                                      thickness: 0.5,
+                                    ),
+                                    Text(
+                                      data!.arText!,
+                                      style: TextStyle(
+                                        color: Colors.black54,
                                       ),
                                     ),
-                                    WidgetSpan(
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Text(
-                                          data!.surEnName!,
-                                        ),
+                                    Text(
+                                      data!.enTran!,
+                                      style: TextStyle(
+                                        color: Colors.black54,
+                                      ),
+                                    ),
+                                    RichText(
+                                      text: TextSpan(
+                                        children: <InlineSpan>[
+                                          WidgetSpan(
+                                            child: Padding(
+                                              padding:
+                                                  const EdgeInsets.all(8.0),
+                                              child: Text(
+                                                data!.surNumber!.toString(),
+                                              ),
+                                            ),
+                                          ),
+                                          WidgetSpan(
+                                            child: Padding(
+                                              padding:
+                                                  const EdgeInsets.all(8.0),
+                                              child: Text(
+                                                data!.surEnName!,
+                                              ),
+                                            ),
+                                          ),
+                                        ],
                                       ),
                                     ),
                                   ],
                                 ),
-                              ),
-                            ],
-                          ))
+                              );
+                          }
+                        },
+                      ),
                     ],
                   ),
                 ),
