@@ -12,7 +12,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  ApiServices _apiServices = ApiServices();
+  final ApiServices _apiServices = ApiServices();
   AyahOfTheDay? data;
 
   @override
@@ -91,7 +91,8 @@ class _HomeScreenState extends State<HomeScreen> {
             Expanded(
               child: SingleChildScrollView(
                 child: Padding(
-                  padding: EdgeInsetsDirectional.only(top: 10, bottom: 20),
+                  padding:
+                      const EdgeInsetsDirectional.only(top: 10, bottom: 20),
                   child: Column(
                     children: [
                       FutureBuilder<AyahOfTheDay>(
@@ -99,10 +100,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         builder: (context, snapshot) {
                           switch (snapshot.connectionState) {
                             case ConnectionState.none:
-                              return Icon(Icons.sync_problem);
+                              return const Icon(Icons.sync_problem);
                             case ConnectionState.waiting:
                             case ConnectionState.active:
-                              return CircularProgressIndicator();
+                              return const CircularProgressIndicator();
                             case ConnectionState.done:
                               return Container(
                                 decoration: BoxDecoration(
@@ -110,25 +111,25 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ),
                                 child: Column(
                                   children: [
-                                    Text(
+                                    const Text(
                                       'Quran Ayah of the Day',
                                       style: TextStyle(
                                           color: Colors.black,
                                           fontWeight: FontWeight.bold),
                                     ),
-                                    Divider(
+                                    const Divider(
                                       color: Colors.black,
                                       thickness: 0.5,
                                     ),
                                     Text(
                                       data!.arText!,
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                         color: Colors.black54,
                                       ),
                                     ),
                                     Text(
                                       data!.enTran!,
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                         color: Colors.black54,
                                       ),
                                     ),
