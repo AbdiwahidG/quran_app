@@ -94,6 +94,17 @@ class _HomeScreenState extends State<HomeScreen> {
                   padding: EdgeInsetsDirectional.only(top: 10, bottom: 20),
                   child: Column(
                     children: [
+                      FutureBuilder<AyahOfTheDay>(
+                          future: _apiServices.getAyahOfTheDay(),
+                          builder: (context,(context, snapshot) {
+                            switch (snapshot.connectionState) {
+                              case ConnectionState.none:
+                              return Icon(Icons.sync_problem);
+                              case ConnectionState.waiting:
+                              case ConnectionSate.active:
+                              return circularProgressIndicator;
+                            }
+                          })),
                       Container(
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(32),
