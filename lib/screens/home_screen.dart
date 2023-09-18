@@ -106,16 +106,26 @@ class _HomeScreenState extends State<HomeScreen> {
                               return const CircularProgressIndicator();
                             case ConnectionState.done:
                               return Container(
+                                margin: const EdgeInsetsDirectional.all(10),
+                                padding: const EdgeInsetsDirectional.all(20),
                                 decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(32),
-                                ),
+                                    borderRadius: BorderRadius.circular(32),
+                                    color: Colors.white,
+                                    boxShadow: const [
+                                      BoxShadow(
+                                          blurRadius: 3,
+                                          spreadRadius: 1,
+                                          offset: Offset(0, 1))
+                                    ]),
                                 child: Column(
                                   children: [
                                     const Text(
                                       'Quran Ayah of the Day',
                                       style: TextStyle(
-                                          color: Colors.black,
-                                          fontWeight: FontWeight.bold),
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 16,
+                                      ),
                                     ),
                                     const Divider(
                                       color: Colors.black,
@@ -125,6 +135,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       data!.arText!,
                                       style: const TextStyle(
                                         color: Colors.black54,
+                                        fontSize: 14,
                                       ),
                                     ),
                                     Text(
