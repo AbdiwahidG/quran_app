@@ -124,7 +124,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       style: TextStyle(
                                         color: Colors.black,
                                         fontWeight: FontWeight.bold,
-                                        fontSize: 16,
+                                        fontSize: 18,
                                       ),
                                     ),
                                     const Divider(
@@ -135,14 +135,14 @@ class _HomeScreenState extends State<HomeScreen> {
                                       data!.arText!,
                                       style: const TextStyle(
                                         color: Colors.black54,
-                                        fontSize: 16,
+                                        fontSize: 18,
                                       ),
                                     ),
                                     Text(
                                       data!.enTran!,
                                       style: const TextStyle(
                                         color: Colors.black54,
-                                        fontSize: 16,
+                                        fontSize: 18,
                                       ),
                                     ),
                                     RichText(
