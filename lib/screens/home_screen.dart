@@ -137,6 +137,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         color: Colors.black54,
                                         fontSize: 18,
                                       ),
+                                      textAlign: TextAlign.center,
                                     ),
                                     Text(
                                       data!.enTran!,
@@ -144,6 +145,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         color: Colors.black54,
                                         fontSize: 18,
                                       ),
+                                      textAlign: TextAlign.center,
                                     ),
                                     RichText(
                                       text: TextSpan(
@@ -155,7 +157,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                               child: Text(
                                                 data!.surNumber!.toString(),
                                                 style: const TextStyle(
-                                                    fontSize: 14),
+                                                    fontSize: 16),
                                               ),
                                             ),
                                           ),
@@ -166,7 +168,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                               child: Text(
                                                 data!.surEnName!,
                                                 style: const TextStyle(
-                                                    fontSize: 14),
+                                                    fontSize: 16),
                                               ),
                                             ),
                                           ),
