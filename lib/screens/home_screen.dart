@@ -135,13 +135,14 @@ class _HomeScreenState extends State<HomeScreen> {
                                       data!.arText!,
                                       style: const TextStyle(
                                         color: Colors.black54,
-                                        fontSize: 14,
+                                        fontSize: 16,
                                       ),
                                     ),
                                     Text(
                                       data!.enTran!,
                                       style: const TextStyle(
                                         color: Colors.black54,
+                                        fontSize: 16,
                                       ),
                                     ),
                                     RichText(
@@ -153,6 +154,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                                   const EdgeInsets.all(8.0),
                                               child: Text(
                                                 data!.surNumber!.toString(),
+                                                style: const TextStyle(
+                                                    fontSize: 14),
                                               ),
                                             ),
                                           ),
@@ -162,6 +165,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                                   const EdgeInsets.all(8.0),
                                               child: Text(
                                                 data!.surEnName!,
+                                                style: const TextStyle(
+                                                    fontSize: 14),
                                               ),
                                             ),
                                           ),
